@@ -15,10 +15,11 @@ export const ThemeTitle = styled.h1`
 export const ThemeLabel = styled.label`
 	font-family: "Inter", sans-serif;
 	font-weight: 400;
-	font-size: 0.625rem;
+	font-size: 0.8rem;
+
 	color: var(--color-gray-0);
 	@media (min-width: 768px) {
-		font-size: 0.75rem;
+		font-size: 0.9rem;
 	}
 `;
 
@@ -29,7 +30,7 @@ export const ThemeInput = styled.input`
 	color: var(--color-gray-0);
 	&::placeholder {
 		color: var(--color-gray-1);
-		font-size: 0.8rem;
+		font-size: 0.9rem;
 	}
 	@media (min-width: 768px) {
 		font-size: 1rem;

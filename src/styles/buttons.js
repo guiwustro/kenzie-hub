@@ -8,14 +8,13 @@ export const ThemeButton = styled.button`
 	border-radius: 5px;
 	border-color: transparent;
 	color: var(--color-gray-0);
+	width: 100%;
 	${(props) =>
 		props.size === "big"
 			? css`
 					height: 38px;
-					width: 260px;
 					@media (min-width: 768px) {
 						height: 48px;
-						width: 324px;
 					}
 			  `
 			: css`
@@ -42,7 +41,7 @@ export const ThemeButton = styled.button`
 			${({ bgcolor }) => {
 				const bgcolors = {
 					primary: "--color-primary-50",
-					lightGray: "--color-gray-1",
+					lightGray: "--color-gray-2",
 					darkGray: "--color-gray-1",
 				};
 				return bgcolors[bgcolor];

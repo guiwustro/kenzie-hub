@@ -12,28 +12,24 @@ const FormLogin = () => {
 	return (
 		<FormContainer>
 			<form>
-				<div>
+				<div className="form__title">
 					<ThemeTitle>Login</ThemeTitle>
 				</div>
-				<div>
+				<div className="form__group">
+					<ThemeInput type="text" placeholder=" " />
 					<ThemeLabel htmlFor="email">Email</ThemeLabel>
-					<ThemeInput type="text" />
 				</div>
-				<div>
+				<div className="form__group">
+					<ThemeInput type="password" placeholder=" " />
 					<ThemeLabel htmlFor="password">Senha</ThemeLabel>
-					<ThemeInput type="password" />
 				</div>
-				<div>
-					<ThemeButton bgcolor="primary" size="big" type="submit">
-						Entrar
-					</ThemeButton>
-				</div>
-				<div>
-					<ThemeParagraph>Ainda não possui uma conta?</ThemeParagraph>
-					<ThemeButton bgcolor="lightGray" size="big">
-						Cadastre-se
-					</ThemeButton>
-				</div>
+				<ThemeButton bgcolor="primary" size="big" type="submit">
+					Entrar
+				</ThemeButton>
+				<ThemeParagraph>Ainda não possui uma conta?</ThemeParagraph>
+				<ThemeButton bgcolor="lightGray" size="big">
+					Cadastre-se
+				</ThemeButton>
 			</form>
 		</FormContainer>
 	);

@@ -1,5 +1,5 @@
 import React from "react";
-import FormRegister from "../../components/FormLogin";
+import FormRegister from "../../components/FormRegister";
 import Logo from "../../components/Logo";
 import { ThemeButton } from "../../styles/buttons";
 import { Container } from "./styles";
