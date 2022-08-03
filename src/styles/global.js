@@ -28,6 +28,8 @@ export default createGlobalStyle`
     background: var(--color-background);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    overflow-y: hidden;
+
     width: 100vw;
     height: 100vh;
     background-color:var(--color-gray-4)

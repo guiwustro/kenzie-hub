@@ -43,6 +43,7 @@ export const ThemeInput = styled.input`
 export const ThemeParagraph = styled.p`
 	font-family: "Inter", sans-serif;
 	font-weight: 400;
+	line-height: 1.4;
 	font-size: 0.625rem;
 	color: var(--color-gray-1);
 `;

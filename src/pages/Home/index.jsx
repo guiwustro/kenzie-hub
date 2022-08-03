@@ -6,13 +6,11 @@ import { Container } from "./styles";
 
 const Home = () => {
 	return (
-		<div>
-			<Container>
-				<Navbar />
-				<Header />
-				<Main />
-			</Container>
-		</div>
+		<Container>
+			<Navbar />
+			<Header />
+			<Main />
+		</Container>
 	);
 };
 

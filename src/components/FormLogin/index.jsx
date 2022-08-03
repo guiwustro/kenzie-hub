@@ -6,6 +6,7 @@ import {
 	ThemeParagraph,
 	ThemeTitle,
 } from "../../styles/typography";
+import { FormGroup } from "../../styles/formGroup";
 import { FormContainer } from "./styles";
 
 const FormLogin = () => {
@@ -15,14 +16,14 @@ const FormLogin = () => {
 				<div className="form__title">
 					<ThemeTitle>Login</ThemeTitle>
 				</div>
-				<div className="form__group">
+				<FormGroup>
 					<ThemeInput type="text" placeholder=" " />
 					<ThemeLabel htmlFor="email">Email</ThemeLabel>
-				</div>
-				<div className="form__group">
+				</FormGroup>
+				<FormGroup className="form__group">
 					<ThemeInput type="password" placeholder=" " />
 					<ThemeLabel htmlFor="password">Senha</ThemeLabel>
-				</div>
+				</FormGroup>
 				<ThemeButton bgcolor="primary" size="big" type="submit">
 					Entrar
 				</ThemeButton>
