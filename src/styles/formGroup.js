@@ -5,7 +5,7 @@ export const FormGroup = styled.div`
 	position: relative;
 	flex-direction: column;
 	width: 100%;
-	height: 50px;
+	height: 70px;
 
 	input {
 		height: 40px;
@@ -15,7 +15,11 @@ export const FormGroup = styled.div`
 		width: 100%;
 		border-radius: 5px;
 		background-color: var(--color-gray-3);
-		border: 2px solid var(--color-gray-0);
+		border: 2px solid;
+		border-color: var(
+			${(props) => (props.errors ? "--color-red" : "--color-gray-0")}
+		);
+
 		&:focus {
 			border-color: var(--color-primary);
 		}
@@ -26,13 +30,13 @@ export const FormGroup = styled.div`
 			color: var(--color-primary);
 		}
 		&:not(:placeholder-shown) {
-			border-color: var(--color-primary);
+			/* border-color: var(--color-primary); */
 		}
 		&:not(:placeholder-shown) ~ label {
 			top: -0.5rem;
 			font-size: 0.8rem;
 			left: 0.8rem;
-			color: var(--color-primary);
+			/* color: var(--color-primary); */
 		}
 	}
 
@@ -41,7 +45,7 @@ export const FormGroup = styled.div`
 		left: 1rem;
 		top: 0.8rem;
 		padding: 0 0.5em;
-		color: white;
+		color: var(${(props) => (props.errors ? "--color-red" : "--color-gray-0")});
 		pointer-events: none;
 		transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
 		background-color: var(--color-gray-3);

@@ -23,6 +23,14 @@ export const ThemeLabel = styled.label`
 	}
 `;
 
+export const ThemeTextError = styled.span`
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 0.7rem;
+
+	color: var(--color-red);
+`;
+
 export const ThemeInput = styled.input`
 	font-family: "Inter", sans-serif;
 	font-weight: 400;

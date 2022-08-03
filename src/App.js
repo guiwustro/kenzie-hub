@@ -1,11 +1,12 @@
 import RoutesMain from "./routes";
 import Global from "./styles/global";
-
+import { useState } from "react";
 function App() {
+	const [user, setUser] = useState();
 	return (
 		<>
 			<Global />
-			<RoutesMain />
+			<RoutesMain user={user} setUser={setUser} />
 		</>
 	);
 }

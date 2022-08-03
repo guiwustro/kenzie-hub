@@ -4,11 +4,11 @@ import Main from "../../components/Main";
 import Navbar from "../../components/Navbar";
 import { Container } from "./styles";
 
-const Home = () => {
+const Home = ({ user }) => {
 	return (
 		<Container>
 			<Navbar />
-			<Header />
+			<Header user={user} />
 			<Main />
 		</Container>
 	);

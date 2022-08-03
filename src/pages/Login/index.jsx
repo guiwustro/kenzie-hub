@@ -3,11 +3,11 @@ import FormLogin from "../../components/FormLogin";
 import Logo from "../../components/Logo";
 import { Container } from "./styles";
 
-const Login = () => {
+const Login = ({ setUser }) => {
 	return (
 		<Container>
 			<Logo />
-			<FormLogin />;
+			<FormLogin setUser={setUser} />
 		</Container>
 	);
 };
