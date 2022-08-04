@@ -21,11 +21,20 @@ export const FormContainer = styled.div`
 		p {
 			text-align: center;
 		}
+
+		.password-show__button {
+			position: absolute;
+			right: 12px;
+			top: 12px;
+			svg {
+				fill: var(--color-gray-1);
+			}
+		}
 	}
 
 	@media (min-width: 768px) {
 		width: 369px;
-		padding: 42px 18px;
-		height: 502px;
+		padding: 52px 18px;
+		height: 452px;
 	}
 `;

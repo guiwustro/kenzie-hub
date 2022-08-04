@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ErrorMessage = styled.div`
+export const Container = styled.div`
 	position: absolute;
 	top: 42px;
 	left: 0px;
