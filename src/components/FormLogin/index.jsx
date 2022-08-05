@@ -14,8 +14,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
 import ErrorMessage from "../ErrorMessage";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { BiHide, BiShow } from "react-icons/bi";
+import { ToastContainerStyled } from "../../styles/toast";
 
 const FormLogin = ({ setUser }) => {
 	let navigate = useNavigate();
@@ -25,7 +26,7 @@ const FormLogin = ({ setUser }) => {
 	});
 
 	const [showPassword, setShowPassword] = useState(false);
-
+	const [isPasswordWrong, setIsPasswordWrong] = useState(false);
 	const {
 		register,
 		handleSubmit,
@@ -45,7 +46,7 @@ const FormLogin = ({ setUser }) => {
 					"Você será redirecionado para página principal em instantes",
 					{
 						position: "top-right",
-						autoClose: 5000,
+						autoClose: 2000,
 						hideProgressBar: false,
 						closeOnClick: true,
 						pauseOnHover: true,
@@ -56,9 +57,20 @@ const FormLogin = ({ setUser }) => {
 
 				setTimeout(() => {
 					navigate("/home", { replace: true });
-				}, 2000);
+				}, 1500);
 			})
-			.catch((err) => console.log(err));
+			.catch(() => {
+				setIsPasswordWrong(true);
+				toast.error("Algum dos campos está incorreto", {
+					position: "top-right",
+					autoClose: 5000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+				});
+			});
 	};
 
 	const onError = () => {
@@ -104,6 +116,7 @@ const FormLogin = ({ setUser }) => {
 						{errors.password && (
 							<ErrorMessage error={errors.password.message} />
 						)}
+						{isPasswordWrong && <ErrorMessage error="Senha incorreta." />}
 					</FormGroup>
 
 					<ThemeButton bgcolor="primary" size="big" type="submit">
@@ -115,11 +128,11 @@ const FormLogin = ({ setUser }) => {
 						size="big"
 						onClick={() => navigate("/register", { replace: true })}
 					>
-						Cadastre-se
+						Cadastre-se Teste
 					</ThemeButton>
 				</form>
 			</FormContainer>
-			<ToastContainer />
+			<ToastContainerStyled />
 		</>
 	);
 };

@@ -31,7 +31,9 @@ export const FormContainer = styled.div`
 			}
 		}
 	}
-
+	.Toastify__toast-theme--dark {
+		background-color: blue;
+	}
 	@media (min-width: 768px) {
 		width: 369px;
 		padding: 52px 18px;
