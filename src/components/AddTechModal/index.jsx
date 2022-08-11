@@ -17,6 +17,8 @@ import { StyledModal } from "../../styles/modal";
 import { ModalContext } from "../../contexts/modalContext";
 import { ThemeButton } from "../../styles/buttons";
 
+import { motion } from "framer-motion";
+
 const AddTechModal = () => {
 	const { addTech, technologies } = useContext(TechnologiesUserContext);
 	const { setOpenAddTechModal } = useContext(ModalContext);
@@ -47,42 +49,52 @@ const AddTechModal = () => {
 
 	return (
 		<StyledModal>
-			<ModalAddTech errors={errors.status}>
-				<div className="modal__header">
-					<ThemeSubtitleSmall>Cadastrar Tecnologia</ThemeSubtitleSmall>
-					<button
-						className="modal__close-button"
-						onClick={() => setOpenAddTechModal(false)}
-					>
-						X
-					</button>
-				</div>
-
-				<form className="modal__body" onSubmit={handleSubmit(addTech, onError)}>
-					<FormGroup errors={errors.title}>
-						<ThemeInput type="text" placeholder=" " {...register("title")} />
-						<ThemeLabel>Nome</ThemeLabel>
-						{errors.title && <ErrorMessage error={errors.title.message} />}
-					</FormGroup>
-
-					<div className="form-select__status">
-						<select defaultValue={"DEFAULT"} {...register("status")}>
-							<option disabled value="DEFAULT">
-								Selecione um Status
-							</option>
-							<option value="Iniciante">Iniciante</option>
-							<option value="Intermediário">Intermediário</option>
-							<option value="Avançado">Avançado</option>
-						</select>
-						{errors.status && (
-							<ErrorMessage error={"Este campo é obrigatório"} />
-						)}
+			<motion.div
+				initial={{ x: 300, y: -200, scale: 0.5, opacity: 0 }}
+				animate={{ x: 0, y: 0, scale: 1, opacity: 1 }}
+				exit={{ x: 0, y: 0, scale: 1, opacity: 1 }}
+				transition={{ duration: 0.5 }}
+			>
+				<ModalAddTech errors={errors.status}>
+					<div className="modal__header">
+						<ThemeSubtitleSmall>Cadastrar Tecnologia</ThemeSubtitleSmall>
+						<button
+							className="modal__close-button"
+							onClick={() => setOpenAddTechModal(false)}
+						>
+							X
+						</button>
 					</div>
-					<ThemeButton bgcolor="primary" size="big" type="submit">
-						Cadastrar Tecnologia
-					</ThemeButton>
-				</form>
-			</ModalAddTech>
+
+					<form
+						className="modal__body"
+						onSubmit={handleSubmit(addTech, onError)}
+					>
+						<FormGroup errors={errors.title}>
+							<ThemeInput type="text" placeholder=" " {...register("title")} />
+							<ThemeLabel>Nome</ThemeLabel>
+							{errors.title && <ErrorMessage error={errors.title.message} />}
+						</FormGroup>
+
+						<div className="form-select__status">
+							<select defaultValue={"DEFAULT"} {...register("status")}>
+								<option disabled value="DEFAULT">
+									Selecione um Status
+								</option>
+								<option value="Iniciante">Iniciante</option>
+								<option value="Intermediário">Intermediário</option>
+								<option value="Avançado">Avançado</option>
+							</select>
+							{errors.status && (
+								<ErrorMessage error={"Este campo é obrigatório"} />
+							)}
+						</div>
+						<ThemeButton bgcolor="primary" size="big" type="submit">
+							Cadastrar Tecnologia
+						</ThemeButton>
+					</form>
+				</ModalAddTech>
+			</motion.div>
 		</StyledModal>
 	);
 };

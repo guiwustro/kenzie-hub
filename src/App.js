@@ -3,6 +3,7 @@ import Global from "./styles/global";
 import AuthUserProvider from "./contexts/authUser";
 import TechnologiesUserProvider from "./contexts/tecnologiesUser";
 import ModalProvider from "./contexts/modalContext";
+import { ToastContainerStyled } from "./styles/toast";
 function App() {
 	return (
 		<AuthUserProvider>
@@ -10,6 +11,7 @@ function App() {
 				<TechnologiesUserProvider>
 					<Global />
 					<RoutesMain />
+					<ToastContainerStyled />
 				</TechnologiesUserProvider>
 			</ModalProvider>
 		</AuthUserProvider>

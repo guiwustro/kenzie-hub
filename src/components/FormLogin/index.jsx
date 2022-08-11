@@ -15,7 +15,6 @@ import { useNavigate } from "react-router-dom";
 import ErrorMessage from "../ErrorMessage";
 import { toast } from "react-toastify";
 import { BiHide, BiShow } from "react-icons/bi";
-import { ToastContainerStyled } from "../../styles/toast";
 import { AuthUserContext } from "../../contexts/authUser";
 
 const FormLogin = () => {
@@ -88,7 +87,6 @@ const FormLogin = () => {
 					</ThemeButton>
 				</form>
 			</FormContainer>
-			<ToastContainerStyled />
 		</>
 	);
 };

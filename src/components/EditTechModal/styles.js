@@ -64,11 +64,12 @@ export const ModalEditTech = styled.div`
 			display: flex;
 			justify-content: space-between;
 			width: 100%;
+			gap: 3%;
 			button:nth-child(1) {
-				width: 150px;
+				width: 67%;
 			}
 			button:nth-child(2) {
-				width: 90px;
+				width: 30%;
 			}
 		}
 	}

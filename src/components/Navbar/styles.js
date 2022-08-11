@@ -5,6 +5,7 @@ export const NavbarContainer = styled.div`
 	justify-content: space-between;
 	height: 72px;
 	align-items: center;
+
 	@media (min-width: 768px) {
 	}
 `;

@@ -12,7 +12,6 @@ const TechnologiesUserProvider = ({ children }) => {
 		useContext(ModalContext);
 	const token = localStorage.getItem("@kenzihub-token");
 	api.defaults.headers.Authorization = `Bearer ${token}`;
-	//criar tech
 
 	const addTech = (data) => {
 		api
@@ -22,7 +21,7 @@ const TechnologiesUserProvider = ({ children }) => {
 				setOpenAddTechModal(false);
 				toast.success("Tecnologia cadastrada com sucesso.");
 			})
-			.catch((err) => {
+			.catch(() => {
 				toast.error("Não foi possível cadastrar a tecnologia.");
 			});
 	};
@@ -44,22 +43,17 @@ const TechnologiesUserProvider = ({ children }) => {
 	};
 
 	const editTech = (techId, newData) => {
-		newData = JSON.stringify(newData);
-		console.log(techId, newData);
-		techId = techId.trim();
-		console.log(typeof techId);
 		api
 			.put(`users/techs/${techId}`, newData)
-			.then((res) => {
-				console.log(res);
-				const indexTech = technologies.findIndex(({ id }) => id !== techId);
+			.then(() => {
+				const indexTech = technologies.findIndex(({ id }) => id === techId);
 				const newTech = [...technologies];
-				newTech[indexTech] = newData;
+				newTech[indexTech].status = newData.status;
 				setTechnologies(newTech);
+				setOpenEditTechModal(false);
 				toast.success("Tecnologia editada com sucesso.");
 			})
-			.catch((err) => {
-				console.log(err);
+			.catch(() => {
 				toast.error(
 					"Não foi possível deletar a tecnologia. Nosso banco de dados está em manutenção, tente novamente mais tarde."
 				);

@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled(motion.div)`
 	border-top: 1px solid var(--color-gray-0);
 	border-bottom: 1px solid var(--color-gray-0);
 

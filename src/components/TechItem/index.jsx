@@ -3,7 +3,6 @@ import { AiFillEdit } from "react-icons/ai";
 import { BsFillTrashFill } from "react-icons/bs";
 import { ModalContext } from "../../contexts/modalContext";
 import { TechnologiesUserContext } from "../../contexts/tecnologiesUser";
-import { ToastContainerStyled } from "../../styles/toast";
 import {
 	ThemeParagraphList,
 	ThemeSubtitleSmall,
@@ -14,7 +13,6 @@ import { TechItemStyled } from "./styles";
 const TechItem = ({ tech }) => {
 	const { deleteTech } = useContext(TechnologiesUserContext);
 	const { openEditTechModal, setOpenEditTechModal } = useContext(ModalContext);
-	console.log(openEditTechModal);
 
 	return (
 		<>
@@ -31,7 +29,6 @@ const TechItem = ({ tech }) => {
 				</div>
 			</TechItemStyled>
 			{openEditTechModal && <EditTechModal actualTech={tech} />}
-			<ToastContainerStyled />
 		</>
 	);
 };

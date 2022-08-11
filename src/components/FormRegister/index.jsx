@@ -14,7 +14,6 @@ import { useNavigate } from "react-router-dom";
 import ErrorMessage from "../ErrorMessage";
 import { formRegister } from "../../validations/registerUser";
 import { toast } from "react-toastify";
-import { ToastContainerStyled } from "../../styles/toast";
 
 function FormRegister() {
 	const navigate = useNavigate();
@@ -142,7 +141,6 @@ function FormRegister() {
 					Cadastrar
 				</ThemeButton>
 			</form>
-			<ToastContainerStyled />
 		</Container>
 	);
 }
