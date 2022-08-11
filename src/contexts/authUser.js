@@ -39,6 +39,21 @@ const AuthUserProvider = ({ children }) => {
 			});
 	};
 
+	const registerUser = (data) => {
+		api
+			.post("/users", data)
+			.then(() => {
+				console.log(data);
+				toast.success(
+					"Você será redirecionado para página de login em instantes"
+				);
+				setTimeout(() => {
+					navigate("/", { replace: true });
+				}, 2000);
+			})
+			.catch((err) => console.log(err));
+	};
+
 	useEffect(() => {
 		const token = localStorage.getItem("@kenzihub-token");
 		api.defaults.headers.Authorization = `Bearer ${token}`;
@@ -68,6 +83,7 @@ const AuthUserProvider = ({ children }) => {
 				setTechnologies,
 				technologies,
 				loginUser,
+				registerUser,
 				isPasswordWrong,
 			}}
 		>

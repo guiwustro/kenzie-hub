@@ -9,14 +9,14 @@ import { Container } from "./styles";
 import { FormGroup } from "../../styles/formGroup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { api } from "../../services/api";
-import { useNavigate } from "react-router-dom";
 import ErrorMessage from "../ErrorMessage";
 import { formRegister } from "../../validations/registerUser";
 import { toast } from "react-toastify";
+import { useContext } from "react";
+import { AuthUserContext } from "../../contexts/authUser";
 
 function FormRegister() {
-	const navigate = useNavigate();
+	const { registerUser } = useContext(AuthUserContext);
 
 	const {
 		register,
@@ -24,27 +24,13 @@ function FormRegister() {
 		formState: { errors },
 	} = useForm({ resolver: yupResolver(formRegister) });
 
-	const onSubmit = (data) => {
-		api
-			.post("/users", data)
-			.then(() => {
-				toast.success(
-					"Você será redirecionado para página de login em instantes"
-				);
-				setTimeout(() => {
-					navigate("/", { replace: true });
-				}, 2000);
-			})
-			.catch((err) => console.log(err));
-	};
-
 	const onError = () => {
 		toast.error("Algum dos campos está incorreto");
 	};
 
 	return (
 		<Container errors={errors.course_module}>
-			<form onSubmit={handleSubmit(onSubmit, onError)}>
+			<form onSubmit={handleSubmit(registerUser, onError)}>
 				<ThemeTitle>Crie sua conta</ThemeTitle>
 				<ThemeParagraph>Rápido e grátis, vamos nessa</ThemeParagraph>
 				<FormGroup errors={errors.name}>
