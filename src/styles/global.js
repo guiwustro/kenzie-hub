@@ -13,6 +13,7 @@ export default createGlobalStyle`
     --color-gray-3:#212529;
     --color-gray-4:#121214;
     --color-red: #ed4337;
+    --color-bgc-modal: #0505057a;
   }
 
   

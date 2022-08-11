@@ -1,13 +1,18 @@
 import RoutesMain from "./routes";
 import Global from "./styles/global";
-import { useState } from "react";
+import AuthUserProvider from "./contexts/authUser";
+import TechnologiesUserProvider from "./contexts/tecnologiesUser";
+import ModalProvider from "./contexts/modalContext";
 function App() {
-	const [user, setUser] = useState();
 	return (
-		<>
-			<Global />
-			<RoutesMain user={user} setUser={setUser} />
-		</>
+		<AuthUserProvider>
+			<ModalProvider>
+				<TechnologiesUserProvider>
+					<Global />
+					<RoutesMain />
+				</TechnologiesUserProvider>
+			</ModalProvider>
+		</AuthUserProvider>
 	);
 }
 

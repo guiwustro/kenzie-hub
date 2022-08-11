@@ -3,12 +3,12 @@ import Logo from "../../components/Logo";
 import { Container } from "./styles";
 import "react-toastify/dist/ReactToastify.css";
 
-const Login = ({ setUser }) => {
+const Login = () => {
 	return (
 		<>
 			<Container>
 				<Logo />
-				<FormLogin setUser={setUser} />
+				<FormLogin />
 			</Container>
 		</>
 	);

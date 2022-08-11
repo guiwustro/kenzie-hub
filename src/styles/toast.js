@@ -1,7 +1,15 @@
 import styled from "styled-components";
 import { ToastContainer } from "react-toastify";
 
-export const ToastContainerStyled = styled(ToastContainer)`
+export const ToastContainerStyled = styled(ToastContainer).attrs({
+	position: "top-right",
+	autoClose: 2000,
+	hideProgressBar: false,
+	closeOnClick: true,
+	pauseOnHover: true,
+	draggable: true,
+	progress: undefined,
+})`
 	.Toastify__toast {
 		background-color: var(--color-gray-2);
 	}

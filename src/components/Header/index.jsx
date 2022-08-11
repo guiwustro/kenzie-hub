@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthUserContext } from "../../contexts/authUser";
 import { ThemeParagraph, ThemeTitle } from "../../styles/typography";
 import { HeaderContainer } from "./styles";
 
-function Header({ user }) {
-	console.log(user);
+function Header() {
+	const { user } = useContext(AuthUserContext);
 
 	return (
 		<HeaderContainer>

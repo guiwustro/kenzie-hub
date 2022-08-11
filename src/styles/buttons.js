@@ -17,12 +17,18 @@ export const ThemeButton = styled.button`
 						height: 48px;
 					}
 			  `
-			: css`
+			: props.size === "small"
+			? css`
 					height: 30px;
 					width: 80px;
 					@media (min-width: 768px) {
 						height: 38px;
 					}
+			  `
+			: css`
+					height: 28px;
+					font-size: 1.5rem;
+					width: 30px;
 			  `}
 
 	background-color: var(

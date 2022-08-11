@@ -30,16 +30,7 @@ function FormRegister() {
 			.post("/users", data)
 			.then(() => {
 				toast.success(
-					"Você será redirecionado para página de login em instantes",
-					{
-						position: "top-right",
-						autoClose: 2000,
-						hideProgressBar: false,
-						closeOnClick: true,
-						pauseOnHover: true,
-						draggable: true,
-						progress: undefined,
-					}
+					"Você será redirecionado para página de login em instantes"
 				);
 				setTimeout(() => {
 					navigate("/", { replace: true });
@@ -49,15 +40,7 @@ function FormRegister() {
 	};
 
 	const onError = () => {
-		toast.error("Algum dos campos está incorreto", {
-			position: "top-right",
-			autoClose: 5000,
-			hideProgressBar: false,
-			closeOnClick: true,
-			pauseOnHover: true,
-			draggable: true,
-			progress: undefined,
-		});
+		toast.error("Algum dos campos está incorreto");
 	};
 
 	return (

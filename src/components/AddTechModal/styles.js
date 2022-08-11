@@ -1,27 +1,37 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-	min-width: 300px;
-	width: 90%;
-	max-width: 420px;
-	padding: 30px 18px;
-	height: 700px;
+export const ModalAddTech = styled.div`
+	height: 275px;
+	width: 296px;
+	border-radius: 4px;
 	background-color: var(--color-gray-3);
-	border-radius: 8px;
-	p {
-		padding-bottom: 0.7rem;
+	.modal__header {
+		background-color: var(--color-gray-2);
+		padding: 0 22px;
+
+		height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.modal__close-button {
+			font-size: 1rem;
+			font-weight: 600;
+			line-height: 26px;
+			color: var(--color-gray-1);
+		}
 	}
-	form {
-		height: 100%;
-		text-align: center;
+	.modal__body {
+		padding: 24px 22px 32px 22px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-
-		.form-select {
+		height: calc(275px - 50px);
+		.form-select__status {
 			width: 100%;
 			height: 60px;
 			position: relative;
+
 			select {
 				width: 100%;
 				height: 40px;
@@ -52,8 +62,12 @@ export const Container = styled.div`
 		}
 	}
 	@media (min-width: 768px) {
-		max-width: 500px;
-		height: 750px;
-		padding: 42px 50px;
+		height: 342px;
+
+		width: 369px;
+		.modal__body {
+			padding: 34px 32px 50px 32px;
+			height: calc(342px - 50px);
+		}
 	}
 `;

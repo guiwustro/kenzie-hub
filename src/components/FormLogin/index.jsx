@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { ThemeButton } from "../../styles/buttons";
 import {
 	ThemeInput,
@@ -12,21 +12,23 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
-import { api } from "../../services/api";
 import ErrorMessage from "../ErrorMessage";
 import { toast } from "react-toastify";
 import { BiHide, BiShow } from "react-icons/bi";
 import { ToastContainerStyled } from "../../styles/toast";
+import { AuthUserContext } from "../../contexts/authUser";
 
-const FormLogin = ({ setUser }) => {
+const FormLogin = () => {
+	const { loginUser, isPasswordWrong } = useContext(AuthUserContext);
+
+	const [showPassword, setShowPassword] = useState(false);
 	let navigate = useNavigate();
+
 	const formSchema = yup.object().shape({
 		email: yup.string().required("E-mail obrigatório").email("E-mail inválido"),
 		password: yup.string().required("Senha obrigatória"),
 	});
 
-	const [showPassword, setShowPassword] = useState(false);
-	const [isPasswordWrong, setIsPasswordWrong] = useState(false);
 	const {
 		register,
 		handleSubmit,
@@ -35,60 +37,14 @@ const FormLogin = ({ setUser }) => {
 		resolver: yupResolver(formSchema),
 	});
 
-	const onSubmit = (data) => {
-		api
-			.post("/sessions", data)
-			.then((res) => {
-				setUser(res.data.user);
-				window.localStorage.setItem("@kenzihub-token", res.data.token);
-				window.localStorage.setItem("@kenzihub-userid", res.data.user.id);
-				toast.success(
-					"Você será redirecionado para página principal em instantes",
-					{
-						position: "top-right",
-						autoClose: 2000,
-						hideProgressBar: false,
-						closeOnClick: true,
-						pauseOnHover: true,
-						draggable: true,
-						progress: undefined,
-					}
-				);
-
-				setTimeout(() => {
-					navigate("/home", { replace: true });
-				}, 1500);
-			})
-			.catch(() => {
-				setIsPasswordWrong(true);
-				toast.error("Algum dos campos está incorreto", {
-					position: "top-right",
-					autoClose: 5000,
-					hideProgressBar: false,
-					closeOnClick: true,
-					pauseOnHover: true,
-					draggable: true,
-					progress: undefined,
-				});
-			});
-	};
-
 	const onError = () => {
-		toast.error("Algum dos campos está incorreto", {
-			position: "top-right",
-			autoClose: 5000,
-			hideProgressBar: false,
-			closeOnClick: true,
-			pauseOnHover: true,
-			draggable: true,
-			progress: undefined,
-		});
+		toast.error("Algum dos campos está incorreto");
 	};
 
 	return (
 		<>
 			<FormContainer>
-				<form onSubmit={handleSubmit(onSubmit, onError)}>
+				<form onSubmit={handleSubmit(loginUser, onError)}>
 					<div className="form__title">
 						<ThemeTitle>Login</ThemeTitle>
 					</div>
@@ -128,7 +84,7 @@ const FormLogin = ({ setUser }) => {
 						size="big"
 						onClick={() => navigate("/register", { replace: true })}
 					>
-						Cadastre-se Teste
+						Cadastre-se
 					</ThemeButton>
 				</form>
 			</FormContainer>
