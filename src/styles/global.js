@@ -29,11 +29,9 @@ export default createGlobalStyle`
   body, #root {
     background: var(--color-background);
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-    overflow-y: hidden;
-
+    overflow-y: auto;
     width: 100vw;
-    height: 100vh;
+   height: 100vh;
     background-color:var(--color-gray-4)
   }
 

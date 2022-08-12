@@ -71,8 +71,10 @@ const AuthUserProvider = ({ children }) => {
 				.finally(() => {
 					setLoading(false);
 				});
+		} else {
+			navigate("/", { replace: true });
 		}
-	}, []);
+	}, [navigate]);
 
 	return (
 		<AuthUserContext.Provider
