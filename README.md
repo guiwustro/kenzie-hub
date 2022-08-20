@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/guiwustro/repo_name">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h3 align="center">KenzieHub</h3>
 
-## Available Scripts
+  <p align="center">
+    É uma aplicação desenvolvida para o usuário gerenciar as tecnologias aprendidas, escolhendo o nível de entendimento da tecnologia (básico, intermediário ou avançado). Além da adição de novas tecnologias na plataforma, o usuário é capaz de editar e remover tecnologias. A aplicação também conta com uma página de Login e Registro para novos usuários, tendo seus dados salvos numa API.
+    <br />
+  </p>
+</div>
 
-In the project directory, you can run:
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">Sobre o projeto</a>
+      <ul>
+        <li><a href="#built-with">Tecnologias utilizadas</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usabilidade</a></li>
+    <li><a href="#features">Roadmap</a></li>
+  </ol>
+</details>
 
-### `yarn start`
+<!-- ABOUT THE PROJECT -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Sobre o projeto
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+É uma aplicação desenvolvida para o usuário gerenciar as tecnologias aprendidas,
+escolhendo o nível de entendimento da tecnologia (básico, intermediário ou
+avançado). Além da adição de novas tecnologias na plataforma, o usuário é capaz
+de editar e remover tecnologias. <br /> A aplicação também conta com uma página
+de Login e Registro para novos usuários, tendo seus dados salvos numa API. A API
+utilizada para fazer as requisições é a
+<a href="https://github.com/Kenzie-Academy-Brasil-Developers/kenziehub-api">
+KenzieHUB API</a>
 
-### `yarn test`
+<p align="right">(<a href="#readme-top">Voltar ao início</a>)</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tecnologias utilizadas
 
-### `yarn build`
+O projeto foi realizado em React, e as bibliotecas utilizadas foram:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Axios;
+- Styled components;
+- Context API;
+- React Router DOM;
+- Toastify;
+- Framer motion;
+- React icons;
+- Yup;
+- Hook-form
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align="right">(<a href="#readme-top">Voltar ao início </a>)</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- USAGE EXAMPLES -->
 
-### `yarn eject`
+## Usabilidade
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Fotos da plataforma / ou um gif.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!-- ROADMAP -->
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Features
 
-## Learn More
+- [x] Criação de um novo usuário através da página /registro;
+- [x] Validação dos dados ao se registrar, a senha possui requisitos mínimos
+      para ser criada e todos os campos são obrigatórios. Tudo isso é notificado
+      pela aplicação ao fazer a criação de uma nova conta.
+- [x] Notificações de feedback ao usuário ao criar uma conta, fazer login,
+      criação, alteração ou remoção de novas tecnologias;
+- [x] Login do usuário na plataforma, verificando se o usuário já está
+      cadastrado;
+- [x] O usuário é capaz de inserir novas tecnologias;
+- [x] O usuário é capaz de alterar e remover as tecnologias já existentes;
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
