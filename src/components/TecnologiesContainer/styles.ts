@@ -6,6 +6,7 @@ export const TechMain = styled.div`
   border-radius: 8px;
   display: grid;
   height: 100%;
+
   padding: 20px 20px 0px 20px;
   grid-template-rows: 45px auto;
   grid-template-areas:

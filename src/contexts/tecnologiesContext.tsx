@@ -42,7 +42,7 @@ export const TechnologiesContext = createContext(
 
 const TechnologiesProvider = ({ children }: ITechnologiesProps) => {
   const { setTechnologies, technologies } = useAuthUserContext();
-  const { setOpenAddTechModal, setOpenEditTechModal } = useModalContext();
+  const { closeModal } = useModalContext();
 
   const token = localStorage.getItem("@kenzihub-token");
   api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
@@ -53,7 +53,7 @@ const TechnologiesProvider = ({ children }: ITechnologiesProps) => {
       .then((res: ITechAddResponse) => {
         delete res.data.user;
         setTechnologies([...technologies, res.data]);
-        setOpenAddTechModal(false);
+        closeModal();
         toast.success("Tecnologia cadastrada com sucesso.");
       })
       .catch(() => {
@@ -68,7 +68,7 @@ const TechnologiesProvider = ({ children }: ITechnologiesProps) => {
         const newTechs = technologies.filter(({ id }) => id !== techId);
         setTechnologies(newTechs);
         toast.success("Tecnologia deletada com sucesso.");
-        setOpenEditTechModal(false);
+        closeModal();
       })
       .catch(() => {
         toast.error(
@@ -85,7 +85,7 @@ const TechnologiesProvider = ({ children }: ITechnologiesProps) => {
         const newTech = [...technologies];
         newTech[indexTech].status = newData.status;
         setTechnologies(newTech);
-        setOpenEditTechModal(false);
+        closeModal();
         toast.success("Tecnologia editada com sucesso.");
       })
       .catch(() => {

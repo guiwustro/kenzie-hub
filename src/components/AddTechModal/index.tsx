@@ -23,7 +23,7 @@ import { ModalAddTech } from "./styles";
 
 const AddTechModal = () => {
   const { addTech, technologies } = useTechnologiesContext();
-  const { setOpenAddTechModal } = useModalContext();
+  const { closeModal } = useModalContext();
 
   const formSchema = yup.object().shape({
     title: yup
@@ -71,7 +71,7 @@ const AddTechModal = () => {
             <ThemeSubtitleSmall>Cadastrar Tecnologia</ThemeSubtitleSmall>
             <button
               className="modal__close-button"
-              onClick={() => setOpenAddTechModal(false)}
+              onClick={() => closeModal()}
             >
               X
             </button>

@@ -21,7 +21,7 @@ import ModalAddWork from "./styles";
 
 const AddWorkModal = () => {
   const { addWork, works } = useWorksContext();
-  const { setOpenAddWorkModal } = useModalContext();
+  const { closeModal } = useModalContext();
 
   const formSchema = yup.object().shape({
     title: yup
@@ -70,7 +70,7 @@ const AddWorkModal = () => {
             <ThemeSubtitleSmall>Cadastrar Projeto</ThemeSubtitleSmall>
             <button
               className="modal__close-button"
-              onClick={() => setOpenAddWorkModal(false)}
+              onClick={() => closeModal()}
             >
               X
             </button>

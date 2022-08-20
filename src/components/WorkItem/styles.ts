@@ -4,10 +4,10 @@ interface IWorkItemStyledProps {
   urlContent: string;
 }
 
-const WorkItemStyled = styled.div<IWorkItemStyledProps>`
+const WorkItemStyled = styled.li<IWorkItemStyledProps>`
   background-color: var(--color-gray-4);
   display: grid;
-  min-height: 69px;
+  min-height: 75px;
   padding: 10px;
   align-items: center;
   gap: 15px;
@@ -31,7 +31,6 @@ const WorkItemStyled = styled.div<IWorkItemStyledProps>`
       font-size: 0.7rem;
       color: var(--color-primary-50);
       text-decoration: none;
-      position: relative;
     }
   }
   .work-url::before {

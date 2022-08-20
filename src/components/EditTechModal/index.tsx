@@ -28,7 +28,7 @@ interface IEditTechModalProps {
 
 const EditTechModal = ({ actualTech }: IEditTechModalProps) => {
   const { editTech, deleteTech } = useTechnologiesContext();
-  const { setOpenEditTechModal } = useModalContext();
+  const { closeModal } = useModalContext();
   const formSchema = yup.object().shape({
     status: yup.string().required("Campo obrigatório").notOneOf(["DEFAULT"]),
   });
@@ -62,7 +62,7 @@ const EditTechModal = ({ actualTech }: IEditTechModalProps) => {
             <ThemeSubtitleSmall>Editar Tecnologia</ThemeSubtitleSmall>
             <button
               className="modal__close-button"
-              onClick={() => setOpenEditTechModal(false)}
+              onClick={() => closeModal()}
             >
               X
             </button>

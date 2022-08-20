@@ -1,8 +1,6 @@
 import { AiFillEdit } from "react-icons/ai";
 import { BsFillTrashFill } from "react-icons/bs";
 
-import { AnimatePresence } from "framer-motion";
-
 import { IWork } from "../../contexts/authUserContext";
 import { useModalContext } from "../../contexts/modalContext";
 import { useWorksContext } from "../../contexts/worksContext";
@@ -10,7 +8,6 @@ import {
   ThemeParagraphList,
   ThemeSubtitleSmall,
 } from "../../styles/typography";
-import EditWorkModal from "../EditWorkModal";
 import WorkItemStyled from "./styles";
 
 interface WorkItemProps {
@@ -19,7 +16,7 @@ interface WorkItemProps {
 
 const WorkItem = ({ work }: WorkItemProps) => {
   const { deleteWork } = useWorksContext();
-  const { setOpenEditWorkModal, openEditWorkModal } = useModalContext();
+  const { WorkEditModal } = useModalContext();
 
   return (
     <>
@@ -35,7 +32,7 @@ const WorkItem = ({ work }: WorkItemProps) => {
         </ThemeParagraphList>
 
         <div className="div__buttons-work-item">
-          <button onClick={() => setOpenEditWorkModal(true)}>
+          <button onClick={() => WorkEditModal(work)}>
             <AiFillEdit />
           </button>
           <button onClick={() => deleteWork(work.id)}>
@@ -43,9 +40,6 @@ const WorkItem = ({ work }: WorkItemProps) => {
           </button>
         </div>
       </WorkItemStyled>
-      <AnimatePresence>
-        {openEditWorkModal && <EditWorkModal actualTech={work} />}
-      </AnimatePresence>
     </>
   );
 };

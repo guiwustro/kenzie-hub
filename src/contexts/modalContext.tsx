@@ -1,46 +1,87 @@
-import {
-  createContext,
-  Dispatch,
-  ReactNode,
-  SetStateAction,
-  useContext,
-  useState,
-} from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
+
+import { ITech, IWork } from "./authUserContext";
+import { ITechData } from "./tecnologiesContext";
 
 interface IModalProviderData {
-  openAddTechModal: boolean;
-  openEditTechModal: boolean;
-  openAddWorkModal: boolean;
-  openEditWorkModal: boolean;
-  setOpenAddTechModal: Dispatch<SetStateAction<boolean>>;
-  setOpenEditTechModal: Dispatch<SetStateAction<boolean>>;
-  setOpenAddWorkModal: Dispatch<SetStateAction<boolean>>;
-  setOpenEditWorkModal: Dispatch<SetStateAction<boolean>>;
+  modalConfig: IModalConfig;
+  TechAddModal: () => void;
+  TechEditModal: (actualTech: ITech) => void;
+  WorkAddModal: () => void;
+  WorkEditModal: (actualWork: IWork) => void;
+  closeModal: () => void;
 }
 
 interface IModalProviderProps {
   children: ReactNode;
 }
 
+interface IModalConfig {
+  isOpen: boolean;
+  content: "Tech" | "Work";
+  type: "Edit" | "Add";
+  dataTech?: ITechData;
+  dataWork?: IWork;
+}
+
 const ModalContext = createContext({} as IModalProviderData);
 
 const ModalProvider = ({ children }: IModalProviderProps) => {
-  const [openAddTechModal, setOpenAddTechModal] = useState(false);
-  const [openEditTechModal, setOpenEditTechModal] = useState(false);
-  const [openAddWorkModal, setOpenAddWorkModal] = useState(false);
-  const [openEditWorkModal, setOpenEditWorkModal] = useState(false);
+  const [modalConfig, setModalConfig] = useState<IModalConfig>({
+    isOpen: false,
+    content: "Tech",
+    type: "Add",
+  });
+
+  const TechAddModal = () => {
+    setModalConfig({
+      isOpen: true,
+      content: "Tech",
+      type: "Add",
+    });
+  };
+  const TechEditModal = (actualTech: ITech) => {
+    setModalConfig({
+      isOpen: true,
+      content: "Tech",
+      type: "Edit",
+      dataTech: actualTech,
+    });
+  };
+
+  const WorkAddModal = () => {
+    setModalConfig({
+      isOpen: true,
+      content: "Work",
+      type: "Add",
+    });
+  };
+  const WorkEditModal = (actualWork: IWork) => {
+    setModalConfig({
+      isOpen: true,
+      content: "Work",
+      type: "Edit",
+      dataWork: actualWork,
+    });
+  };
+
+  const closeModal = () => {
+    setModalConfig((previous) => {
+      const config = { ...previous };
+      config.isOpen = false;
+      return config;
+    });
+  };
 
   return (
     <ModalContext.Provider
       value={{
-        openAddTechModal,
-        setOpenAddTechModal,
-        openEditTechModal,
-        setOpenEditTechModal,
-        openAddWorkModal,
-        setOpenAddWorkModal,
-        openEditWorkModal,
-        setOpenEditWorkModal,
+        modalConfig,
+        TechAddModal,
+        TechEditModal,
+        WorkAddModal,
+        WorkEditModal,
+        closeModal,
       }}
     >
       {children}

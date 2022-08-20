@@ -20,12 +20,12 @@ import {
 import ModalEditWork from "./styles";
 
 interface IEditWorkModalProps {
-  actualTech: IWork;
+  actualWork: IWork;
 }
 
-const EditWorkModal = ({ actualTech }: IEditWorkModalProps) => {
+const EditWorkModal = ({ actualWork }: IEditWorkModalProps) => {
   const { editWork, deleteWork } = useWorksContext();
-  const { setOpenEditWorkModal } = useModalContext();
+  const { closeModal } = useModalContext();
 
   const formSchema = yup.object().shape({
     title: yup.string().required("Campo obrigatório"),
@@ -61,7 +61,7 @@ const EditWorkModal = ({ actualTech }: IEditWorkModalProps) => {
             <ThemeSubtitleSmall>Editar Projeto</ThemeSubtitleSmall>
             <button
               className="modal__close-button"
-              onClick={() => setOpenEditWorkModal(false)}
+              onClick={() => closeModal()}
             >
               X
             </button>
@@ -70,7 +70,7 @@ const EditWorkModal = ({ actualTech }: IEditWorkModalProps) => {
           <form
             className="modal__body"
             onSubmit={handleSubmit(
-              (data) => editWork(actualTech.id, data),
+              (data) => editWork(actualWork.id, data),
               onError,
             )}
           >
@@ -78,7 +78,7 @@ const EditWorkModal = ({ actualTech }: IEditWorkModalProps) => {
               <ThemeInput
                 type="text"
                 placeholder=" "
-                defaultValue={actualTech.title}
+                defaultValue={actualWork.title}
                 {...register("title")}
               />
               <ThemeLabel>Título</ThemeLabel>
@@ -87,7 +87,7 @@ const EditWorkModal = ({ actualTech }: IEditWorkModalProps) => {
             <FormGroupTextArea>
               <ThemeTextArea
                 placeholder=" "
-                defaultValue={actualTech.description}
+                defaultValue={actualWork.description}
                 {...register("description")}
               />
               <ThemeLabel>Descrição</ThemeLabel>
@@ -100,7 +100,7 @@ const EditWorkModal = ({ actualTech }: IEditWorkModalProps) => {
               <ThemeButton
                 bgcolor="lightGray"
                 size="big"
-                onClick={() => deleteWork(actualTech.id)}
+                onClick={() => deleteWork(actualWork.id)}
                 type="button"
               >
                 Excluir

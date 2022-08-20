@@ -9,6 +9,8 @@ export const WorkMain = styled.div.attrs({
   padding: 20px 20px 0px 20px;
   border-radius: 8px;
   display: grid;
+  margin-bottom: 20px;
+
   grid-template-rows: 45px auto;
   grid-template-areas:
     "title btnPlus"

@@ -1,16 +1,19 @@
 import { Navigate } from "react-router-dom";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import Header from "../../components/Header";
 import LoadingScreen from "../../components/LoadingScreen";
 import Main from "../../components/Main";
+import { Modal } from "../../components/Modal";
 import Navbar from "../../components/Navbar";
 import { useAuthUserContext } from "../../contexts/authUserContext";
+import { useModalContext } from "../../contexts/modalContext";
 import { Container } from "./styles";
 
 const Home = () => {
   const { user, isLoading } = useAuthUserContext();
+  const { modalConfig } = useModalContext();
   if (isLoading) return <LoadingScreen />;
   return user ? (
     <motion.div>
@@ -26,6 +29,7 @@ const Home = () => {
           <Main />
         </motion.div>
       </Container>
+      <AnimatePresence>{modalConfig.isOpen && <Modal />}</AnimatePresence>
     </motion.div>
   ) : (
     <Navigate to="/" replace />

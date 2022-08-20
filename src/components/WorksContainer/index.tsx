@@ -7,7 +7,7 @@ import { WorkMain } from "./styles";
 
 const WorksContainer = () => {
   const { works } = useWorksContext();
-  const { setOpenAddWorkModal } = useModalContext();
+  const { WorkAddModal } = useModalContext();
 
   return (
     <WorkMain>
@@ -15,7 +15,7 @@ const WorksContainer = () => {
       <ThemeButton
         size="medium"
         bgcolor="darkGray"
-        onClick={() => setOpenAddWorkModal(true)}
+        onClick={() => WorkAddModal()}
       >
         +
       </ThemeButton>

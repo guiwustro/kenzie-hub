@@ -1,8 +1,6 @@
 import { AiFillEdit } from "react-icons/ai";
 import { BsFillTrashFill } from "react-icons/bs";
 
-import { AnimatePresence } from "framer-motion";
-
 import { useModalContext } from "../../contexts/modalContext";
 import {
   ITechData,
@@ -12,7 +10,6 @@ import {
   ThemeParagraphList,
   ThemeSubtitleSmall,
 } from "../../styles/typography";
-import EditTechModal from "../EditTechModal";
 import { TechItemStyled } from "./styles";
 
 interface TechItemProps {
@@ -21,10 +18,7 @@ interface TechItemProps {
 
 const TechItem = ({ tech }: TechItemProps) => {
   const { deleteTech } = useTechnologiesContext();
-  const { openEditTechModal, setOpenEditTechModal } = useModalContext();
-  {
-    console.log(tech);
-  }
+  const { TechEditModal } = useModalContext();
 
   return (
     <>
@@ -32,7 +26,7 @@ const TechItem = ({ tech }: TechItemProps) => {
         <ThemeSubtitleSmall>{tech.title}</ThemeSubtitleSmall>
         <ThemeParagraphList>{tech.status}</ThemeParagraphList>
         <div className="div__buttons">
-          <button onClick={() => setOpenEditTechModal(true)}>
+          <button onClick={() => TechEditModal(tech)}>
             <AiFillEdit />
           </button>
           <button onClick={() => deleteTech(tech.id)}>
@@ -40,9 +34,6 @@ const TechItem = ({ tech }: TechItemProps) => {
           </button>
         </div>
       </TechItemStyled>
-      <AnimatePresence>
-        {openEditTechModal && <EditTechModal actualTech={tech} />}
-      </AnimatePresence>
     </>
   );
 };

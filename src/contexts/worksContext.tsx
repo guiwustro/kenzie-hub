@@ -41,7 +41,7 @@ export const WorksContext = createContext({} as IWorksProvider);
 
 const WorksProvider = ({ children }: IWorksProps) => {
   const { works, setWorks } = useAuthUserContext();
-  const { setOpenAddWorkModal, setOpenEditTechModal } = useModalContext();
+  const { closeModal } = useModalContext();
 
   const addWork = (data: IWorkAdd) => {
     api
@@ -49,7 +49,7 @@ const WorksProvider = ({ children }: IWorksProps) => {
       .then((res: IWorksPostResponse) => {
         delete res.data.user;
         setWorks([...works, res.data]);
-        setOpenAddWorkModal(false);
+        closeModal();
         toast.success("Projeto cadastrado com sucesso.");
       })
       .catch(() => {
@@ -64,7 +64,7 @@ const WorksProvider = ({ children }: IWorksProps) => {
         const newTechs = works.filter(({ id }) => id !== techId);
         setWorks(newTechs);
         toast.success("Projeto deletado com sucesso.");
-        setOpenEditTechModal(false);
+        closeModal();
       })
       .catch(() => {
         toast.error(
@@ -84,7 +84,7 @@ const WorksProvider = ({ children }: IWorksProps) => {
         newTech[indexTech].description = newData.description;
 
         setWorks(newTech);
-        setOpenEditTechModal(false);
+        closeModal();
         toast.success("Tecnologia editada com sucesso.");
       })
       .catch(() => {

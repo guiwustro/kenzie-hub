@@ -7,7 +7,7 @@ import { TechMain } from "./styles";
 
 const TecnologiesContainer = () => {
   const { technologies } = useTechnologiesContext();
-  const { setOpenAddTechModal } = useModalContext();
+  const { TechAddModal } = useModalContext();
 
   return (
     <TechMain>
@@ -15,7 +15,7 @@ const TecnologiesContainer = () => {
       <ThemeButton
         size="medium"
         bgcolor="darkGray"
-        onClick={() => setOpenAddTechModal(true)}
+        onClick={() => TechAddModal()}
       >
         +
       </ThemeButton>

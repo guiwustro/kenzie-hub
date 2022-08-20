@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const TechItemStyled = styled.li`
   background-color: var(--color-gray-4);
   display: grid;
-  height: 69px;
+  min-height: 75px;
   padding: 0 10px;
   margin-bottom: 20px;
   align-items: center;
