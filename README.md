@@ -13,23 +13,7 @@
   </p>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">Sobre o projeto</a>
-      <ul>
-        <li><a href="#built-with">Tecnologias utilizadas</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usabilidade</a></li>
-    <li><a href="#features">Roadmap</a></li>
-  </ol>
-</details>
-
 <!-- ABOUT THE PROJECT -->
-
 ## Sobre o projeto
 
 É uma aplicação desenvolvida para o usuário gerenciar as tecnologias aprendidas,
@@ -41,7 +25,6 @@ utilizada para fazer as requisições é a
 <a href="https://github.com/Kenzie-Academy-Brasil-Developers/kenziehub-api">
 KenzieHUB API</a>
 
-<p align="right">(<a href="#readme-top">Voltar ao início</a>)</p>
 
 ## Tecnologias utilizadas
 
@@ -57,7 +40,6 @@ O projeto foi realizado em React, e as bibliotecas utilizadas foram:
 - Yup;
 - Hook-form
 
-<p align="right">(<a href="#readme-top">Voltar ao início </a>)</p>
 
 <!-- USAGE EXAMPLES -->
 
@@ -65,7 +47,6 @@ O projeto foi realizado em React, e as bibliotecas utilizadas foram:
 
 Fotos da plataforma / ou um gif.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 
@@ -81,5 +62,3 @@ Fotos da plataforma / ou um gif.
       cadastrado;
 - [x] O usuário é capaz de inserir novas tecnologias;
 - [x] O usuário é capaz de alterar e remover as tecnologias já existentes;
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
