@@ -75,7 +75,7 @@ const WorksProvider = ({ children }: IWorksProps) => {
 
   const editWork = (techId: string, newData: IWorkEdit) => {
     api
-      .put(`users/techs/${techId}`, newData)
+      .put(`users/works/${techId}`, newData)
       .then(() => {
         const indexTech = works.findIndex(({ id }) => id === techId);
         const newTech = [...works];
@@ -89,7 +89,7 @@ const WorksProvider = ({ children }: IWorksProps) => {
       })
       .catch(() => {
         toast.error(
-          "Não foi possível deletar a tecnologia. Nosso banco de dados está em manutenção, tente novamente mais tarde.",
+          "Não foi possível alterar a tecnologia. Nosso banco de dados está em manutenção, tente novamente mais tarde.",
         );
       });
   };
