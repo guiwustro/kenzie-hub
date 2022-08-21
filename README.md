@@ -57,8 +57,8 @@ Fotos da plataforma / ou um gif.
       para ser criada e todos os campos são obrigatórios. Tudo isso é notificado
       pela aplicação ao fazer a criação de uma nova conta.
 - [x] Notificações de feedback ao usuário ao criar uma conta, fazer login,
-      criação, alteração ou remoção de novas tecnologias;
+      criação, alteração ou remoção de novas tecnologias e proejtos;
 - [x] Login do usuário na plataforma, verificando se o usuário já está
       cadastrado;
-- [x] O usuário é capaz de inserir novas tecnologias;
-- [x] O usuário é capaz de alterar e remover as tecnologias já existentes;
+- [x] O usuário é capaz de inserir novas tecnologias e novos projetos ;
+- [x] O usuário é capaz de alterar e remover as tecnologias e os projetos já existentes;
