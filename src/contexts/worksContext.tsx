@@ -85,7 +85,7 @@ const WorksProvider = ({ children }: IWorksProps) => {
 
         setWorks(newTech);
         closeModal();
-        toast.success("Tecnologia editada com sucesso.");
+        toast.success("Projeto editado com sucesso.");
       })
       .catch(() => {
         toast.error(

@@ -8,6 +8,7 @@ const WorkItemStyled = styled.li<IWorkItemStyledProps>`
   background-color: var(--color-gray-4);
   display: grid;
   min-height: 75px;
+
   padding: 10px;
   align-items: center;
   gap: 15px;
@@ -21,8 +22,7 @@ const WorkItemStyled = styled.li<IWorkItemStyledProps>`
   .work-url {
     grid-area: urlWork;
     justify-self: start;
-    text-overflow: ellipsis;
-    /* word-break: break-all; */
+
     position: relative;
     a {
       font-family: "Inter", sans-serif;
@@ -57,7 +57,7 @@ const WorkItemStyled = styled.li<IWorkItemStyledProps>`
   .work-description {
     grid-area: descriptionWork;
     align-self: start;
-    align-self: start;
+    word-break: break-all;
   }
   .div__buttons-work-item {
     grid-area: buttonsWork;
