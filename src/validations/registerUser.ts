@@ -10,11 +10,11 @@ export const formRegister = yup.object().shape({
     .string()
     .required("Este campo é obrigatório.")
     .min(6, "A senha deve ter no mínimo 6 caracteres")
-    .matches(/\?=.*?[0-9]/, "A senha deve conter ao menos um dígito")
-    .matches(/\?=.*[A-Z]/, "A senha deve conter ao menos uma letra maiúscula")
-    .matches(/\?=.*[a-z]/, "A senha deve conter ao menos uma letra minúscula")
+    .matches(/\?=\.*?[0-9]/, "A senha deve conter ao menos um dígito")
+    .matches(/\?=\.*[A-Z]/, "A senha deve conter ao menos uma letra maiúscula")
+    .matches(/\?=\.*[a-z]/, "A senha deve conter ao menos uma letra minúscula")
     .matches(
-      /\?=.*[!$*&@#%]/,
+      /\?=\.*[!$*&@#%]/,
       "A senha deve conter ao menos um caracter especial",
     ),
   passwordConfirmation: yup

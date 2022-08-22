@@ -158,7 +158,8 @@ const AuthUserProvider = ({ children }: IAuthUserProps) => {
     } else {
       navigate("/", { replace: true });
     }
-  }, [navigate]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <AuthUserContext.Provider
