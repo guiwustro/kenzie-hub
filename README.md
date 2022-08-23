@@ -8,6 +8,8 @@
   <p align="center">
     É uma aplicação desenvolvida para o usuário gerenciar as tecnologias aprendidas e os projetos criados.
   </p>
+  <a href="https://kenzie-hub-guiwustro.vercel.app/">
+Link do projeto</a>
 </div>
 
 <!-- ABOUT THE PROJECT -->
@@ -27,7 +29,6 @@ KenzieHUB API</a> <br />
 O Figma utilizado para o projeto foi
 <a href="https://www.figma.com/file/ccZ4uMlJtuBQISDzCCI1Vq/Kenzie-Hub?node-id=0%3A1">
 este aqui</a>
-
 
 
 ## Tecnologias utilizadas
