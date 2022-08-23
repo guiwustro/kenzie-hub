@@ -57,7 +57,7 @@ O projeto foi realizado em React, e as bibliotecas utilizadas foram:
 
 ## Features
 
-- [x] Criação de um novo usuário através da página /registro;
+- [x] Página para o usuário criar uma conta;
 - [x] Validação dos dados ao se registrar, a senha possui requisitos mínimos
       para ser criada e todos os campos são obrigatórios. Tudo isso é notificado
       pela aplicação ao fazer a criação de uma nova conta.
