@@ -65,6 +65,7 @@ export const FormGroupTextArea = styled.div<IFormGroup>`
 
   textarea {
     height: 60px;
+    resize: none;
     padding-top: 0.5rem;
     padding-left: 13px;
     position: absolute;
