@@ -16,11 +16,18 @@
 É uma aplicação desenvolvida para o usuário gerenciar as tecnologias aprendidas,
 escolhendo o nível de entendimento da tecnologia (básico, intermediário ou
 avançado). Além da adição de novas tecnologias na plataforma, o usuário é capaz
-de editar e remover tecnologias. <br /> A aplicação também conta com uma página
+de editar e remover tecnologias. <br />
+
+A aplicação também conta com uma página
 de Login e Registro para novos usuários, tendo seus dados salvos numa API. A API
 utilizada para fazer as requisições é a
 <a href="https://github.com/Kenzie-Academy-Brasil-Developers/kenziehub-api">
-KenzieHUB API</a>
+KenzieHUB API</a> <br />
+
+O Figma utilizado para o projeto foi
+<a href="https://www.figma.com/file/ccZ4uMlJtuBQISDzCCI1Vq/Kenzie-Hub?node-id=0%3A1">
+este aqui</a>
+
 
 
 ## Tecnologias utilizadas
