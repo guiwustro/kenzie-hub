@@ -48,7 +48,6 @@ O projeto foi realizado em React, e as bibliotecas utilizadas foram:
 
 ## Usabilidade
 
-Fotos da plataforma / ou um gif.
 <div align="center">
 <img src="screenshots/kenzie-hub.gif" >
 </div>
