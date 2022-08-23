@@ -4,7 +4,7 @@ interface IFormGroup {
   errors?: boolean;
 }
 
-export const FormGroup = styled.div<IFormGroup>`
+export const FormGroupStyled = styled.div<IFormGroup>`
   display: flex;
   position: relative;
   flex-direction: column;
@@ -56,7 +56,7 @@ export const FormGroup = styled.div<IFormGroup>`
   }
 `;
 
-export const FormGroupTextArea = styled.div<IFormGroup>`
+export const FormGroupTextAreaStyled = styled.div<IFormGroup>`
   display: flex;
   position: relative;
   flex-direction: column;

@@ -11,7 +11,7 @@ import {
   useTechnologiesContext,
 } from "../../../contexts/tecnologiesContext";
 import { ThemeButton } from "../../../styles/buttons";
-import { FormGroup } from "../../../styles/formGroup";
+import { FormGroupStyled } from "../../../styles/formGroup";
 import {
   ThemeInput,
   ThemeLabel,
@@ -58,7 +58,7 @@ const EditTechModal = ({ actualTech }: IEditTechModalProps) => {
           onError,
         )}
       >
-        <FormGroup>
+        <FormGroupStyled>
           <ThemeInput
             type="text"
             placeholder=" "
@@ -66,7 +66,7 @@ const EditTechModal = ({ actualTech }: IEditTechModalProps) => {
             disabled
           />
           <ThemeLabel>Nome</ThemeLabel>
-        </FormGroup>
+        </FormGroupStyled>
 
         <div className="form-select__status">
           <select defaultValue={"DEFAULT"} {...register("status")}>

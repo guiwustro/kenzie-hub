@@ -13,15 +13,15 @@ export const Modal = () => {
   const content = modalConfig.content;
   const type = modalConfig.type;
 
-  function createModalEditWork() {
+  const createModalEditWork = () => {
     if (modalConfig.dataWork)
       return <EditWorkModal actualWork={modalConfig.dataWork} />;
-  }
+  };
 
-  function createModalEditTech() {
+  const createModalEditTech = () => {
     if (modalConfig.dataTech)
       return <EditTechModal actualTech={modalConfig.dataTech} />;
-  }
+  };
 
   const modals = {
     Tech: {

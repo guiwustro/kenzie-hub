@@ -10,13 +10,9 @@ import {
   useTechnologiesContext,
 } from "../../../contexts/tecnologiesContext";
 import { ThemeButton } from "../../../styles/buttons";
-import { FormGroup } from "../../../styles/formGroup";
-import {
-  ThemeInput,
-  ThemeLabel,
-  ThemeSubtitleSmall,
-} from "../../../styles/typography";
+import { ThemeSubtitleSmall } from "../../../styles/typography";
 import ErrorMessage from "../../ErrorMessage";
+import { FormGroup } from "../../FormGroup";
 import { ModalAddTech } from "./styles";
 
 const AddTechModal = () => {
@@ -60,11 +56,12 @@ const AddTechModal = () => {
       </div>
 
       <form className="modal__body" onSubmit={handleSubmit(addTech, onError)}>
-        <FormGroup errors={!!errors.title}>
-          <ThemeInput type="text" placeholder=" " {...register("title")} />
-          <ThemeLabel>Nome</ThemeLabel>
-          {errors.title && <ErrorMessage error={errors.title.message} />}
-        </FormGroup>
+        <FormGroup
+          label="Nome"
+          register={register}
+          errors={errors.title?.message}
+          registerName={"title"}
+        />
 
         <div className="form-select__status">
           <select defaultValue={"DEFAULT"} {...register("status")}>

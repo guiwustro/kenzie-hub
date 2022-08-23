@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { BiHide, BiShow } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -9,20 +7,14 @@ import * as yup from "yup";
 
 import { IUserLogin, useAuthUserContext } from "../../contexts/authUserContext";
 import { ThemeButton } from "../../styles/buttons";
-import { FormGroup } from "../../styles/formGroup";
-import {
-  ThemeInput,
-  ThemeLabel,
-  ThemeParagraph,
-  ThemeTitle,
-} from "../../styles/typography";
-import ErrorMessage from "../ErrorMessage";
+import { ThemeParagraph, ThemeTitle } from "../../styles/typography";
+import { FormGroup } from "../FormGroup";
+import { FormGroupPassword } from "../FormGroupPassword";
 import { FormContainer } from "./styles";
 
 const FormLogin = () => {
   const { loginUser, isPasswordWrong } = useAuthUserContext();
 
-  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const formSchema = yup.object().shape({
@@ -41,7 +33,6 @@ const FormLogin = () => {
   const onError = () => {
     toast.error("Algum dos campos está incorreto");
   };
-
   return (
     <>
       <FormContainer>
@@ -49,32 +40,20 @@ const FormLogin = () => {
           <div className="form__title">
             <ThemeTitle>Login</ThemeTitle>
           </div>
+          <FormGroup
+            register={register}
+            errors={errors.email?.message}
+            label={"E-mail"}
+            registerName={"email"}
+          />
 
-          <FormGroup>
-            <ThemeInput type="text" placeholder=" " {...register("email")} />
-            <ThemeLabel htmlFor="email">Email</ThemeLabel>
-            {errors.email && <ErrorMessage error={errors.email.message} />}
-          </FormGroup>
-
-          <FormGroup className="form__group">
-            <ThemeInput
-              type={showPassword ? "text" : "password"}
-              placeholder=" "
-              {...register("password")}
-            />
-            <ThemeLabel htmlFor="password">Senha</ThemeLabel>
-            <button
-              type="button"
-              className="password-show__button"
-              onClick={() => setShowPassword((old) => !old)}
-            >
-              {showPassword ? <BiShow /> : <BiHide />}
-            </button>
-            {errors.password && (
-              <ErrorMessage error={errors.password.message} />
-            )}
-            {isPasswordWrong && <ErrorMessage error="Senha incorreta." />}
-          </FormGroup>
+          <FormGroupPassword
+            register={register}
+            errors={errors.password?.message}
+            registerName={"password"}
+            label={"Senha"}
+            isPasswordWrong={isPasswordWrong}
+          />
 
           <ThemeButton bgcolor="primary" size="big" type="submit">
             Entrar

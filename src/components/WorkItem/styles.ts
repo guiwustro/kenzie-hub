@@ -57,7 +57,6 @@ const WorkItemStyled = styled.li<IWorkItemStyledProps>`
   .work-description {
     grid-area: descriptionWork;
     align-self: start;
-    word-break: break-all;
   }
   .div__buttons-work-item {
     grid-area: buttonsWork;

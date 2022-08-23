@@ -8,13 +8,13 @@ import { IWork } from "../../../contexts/authUserContext";
 import { useModalContext } from "../../../contexts/modalContext";
 import { useWorksContext, IWorkEdit } from "../../../contexts/worksContext";
 import { ThemeButton } from "../../../styles/buttons";
-import { FormGroup, FormGroupTextArea } from "../../../styles/formGroup";
+import { FormGroupTextAreaStyled } from "../../../styles/formGroup";
 import {
-  ThemeInput,
   ThemeLabel,
   ThemeSubtitleSmall,
   ThemeTextArea,
 } from "../../../styles/typography";
+import { FormGroup } from "../../FormGroup";
 import ModalEditWork from "./styles";
 
 interface IEditWorkModalProps {
@@ -57,24 +57,22 @@ const EditWorkModal = ({ actualWork }: IEditWorkModalProps) => {
           onError,
         )}
       >
-        <FormGroup>
-          <ThemeInput
-            type="text"
-            placeholder=" "
-            defaultValue={actualWork.title}
-            {...register("title")}
-          />
-          <ThemeLabel>Título</ThemeLabel>
-        </FormGroup>
+        <FormGroup
+          errors={errors.title?.message}
+          register={register}
+          label="Título"
+          defaultValue={actualWork.title}
+          registerName={"title"}
+        />
 
-        <FormGroupTextArea>
+        <FormGroupTextAreaStyled>
           <ThemeTextArea
             placeholder=" "
             defaultValue={actualWork.description}
             {...register("description")}
           />
           <ThemeLabel>Descrição</ThemeLabel>
-        </FormGroupTextArea>
+        </FormGroupTextAreaStyled>
 
         <div className="modal__buttons">
           <ThemeButton bgcolor="primary" size="big" type="submit">

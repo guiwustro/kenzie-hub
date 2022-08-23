@@ -7,14 +7,14 @@ import * as yup from "yup";
 import { useModalContext } from "../../../contexts/modalContext";
 import { IWorkAdd, useWorksContext } from "../../../contexts/worksContext";
 import { ThemeButton } from "../../../styles/buttons";
-import { FormGroup, FormGroupTextArea } from "../../../styles/formGroup";
+import { FormGroupTextAreaStyled } from "../../../styles/formGroup";
 import {
-  ThemeInput,
   ThemeLabel,
   ThemeSubtitleSmall,
   ThemeTextArea,
 } from "../../../styles/typography";
 import ErrorMessage from "../../ErrorMessage";
+import { FormGroup } from "../../FormGroup";
 import ModalAddWork from "./styles";
 
 const AddWorkModal = () => {
@@ -59,23 +59,25 @@ const AddWorkModal = () => {
       </div>
 
       <form className="modal__body" onSubmit={handleSubmit(addWork, onError)}>
-        <FormGroup errors={!!errors.title}>
-          <ThemeInput type="text" placeholder=" " {...register("title")} />
-          <ThemeLabel>Título</ThemeLabel>
-          {errors.title && <ErrorMessage error={errors.title.message} />}
-        </FormGroup>
+        <FormGroup
+          label="Título"
+          register={register}
+          errors={errors.title?.message}
+          registerName={"title"}
+        />
 
-        <FormGroupTextArea errors={!!errors.description}>
+        <FormGroupTextAreaStyled errors={!!errors.description}>
           <ThemeTextArea placeholder=" " {...register("description")} />
           <ThemeLabel>Descrição</ThemeLabel>
           {errors.title && <ErrorMessage error={errors.title.message} />}
-        </FormGroupTextArea>
+        </FormGroupTextAreaStyled>
 
-        <FormGroup errors={!!errors.deploy_url}>
-          <ThemeInput type="text" placeholder=" " {...register("deploy_url")} />
-          <ThemeLabel>Link do projeto</ThemeLabel>
-          {errors.title && <ErrorMessage error={errors.title.message} />}
-        </FormGroup>
+        <FormGroup
+          label="Link do projeto"
+          register={register}
+          errors={errors.deploy_url?.message}
+          registerName={"deploy_url"}
+        />
 
         <ThemeButton bgcolor="primary" size="big" type="submit">
           Cadastrar Tecnologia

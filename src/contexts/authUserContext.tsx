@@ -101,6 +101,9 @@ const AuthUserProvider = ({ children }: IAuthUserProps) => {
       .post("/sessions", data)
       .then((res: ILoginResponse) => {
         setUser(res.data.user);
+        setTechnologies(res.data.user.techs);
+        setWorks(res.data.user.works);
+
         window.localStorage.setItem("@kenzihub-token", res.data.token);
         window.localStorage.setItem("@kenzihub-userid", res.data.user.id);
         api.defaults.headers.common[

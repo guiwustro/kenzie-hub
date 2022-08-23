@@ -1,15 +1,12 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/guiwustro/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
-<h3 align="center">KenzieHub</h3>
+
+<h1 align="center">KenzieHub</h1>
 
   <p align="center">
-    É uma aplicação desenvolvida para o usuário gerenciar as tecnologias aprendidas, escolhendo o nível de entendimento da tecnologia (básico, intermediário ou avançado). Além da adição de novas tecnologias na plataforma, o usuário é capaz de editar e remover tecnologias. A aplicação também conta com uma página de Login e Registro para novos usuários, tendo seus dados salvos numa API.
-    <br />
+    É uma aplicação desenvolvida para o usuário gerenciar as tecnologias aprendidas e os projetos criados.
   </p>
 </div>
 
@@ -38,15 +35,16 @@ O projeto foi realizado em React, e as bibliotecas utilizadas foram:
 - Framer motion;
 - React icons;
 - Yup;
-- Hook-form
-
+- Hook-form;
 
 <!-- USAGE EXAMPLES -->
 
 ## Usabilidade
 
 Fotos da plataforma / ou um gif.
-
+<div align="center">
+<img src="screenshots/kenzie-hub.gif" >
+</div>
 
 <!-- ROADMAP -->
 
@@ -62,3 +60,4 @@ Fotos da plataforma / ou um gif.
       cadastrado;
 - [x] O usuário é capaz de inserir novas tecnologias e novos projetos ;
 - [x] O usuário é capaz de alterar e remover as tecnologias e os projetos já existentes;
+- [x] Responsivo para todas as telas;
